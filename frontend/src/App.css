@@ -1,0 +1,10 @@
+
+.App{
+    display: flex;
+   flex-direction: column;
+
+}
+
+.App h1,h2{
+    padding: 20px;
+}
