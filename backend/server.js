@@ -2,13 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
 
-mongoose.connect("mongodb+srv://shanmukhik:2003@cluster-demo.ux9wg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-demo").then(() => console.log("Mongodb connected"))
+mongoose.connect(process.env.MONGODB_URI).then(() => console.log("Mongodb connected"))
 .catch(()=>console.log("Error connecting to mongodb"));
 
 const User = mongoose.model('User',{    
@@ -78,9 +79,6 @@ app.delete('/users/:id', async(req,res)=>{
        
 
         const deletedUser = await User.findByIdAndDelete(req.params.id);
-
-        // If no user is found
-        
         res.status(200).send("User deleted");
     }catch(err){
         console.log("Error:",err);
