@@ -8,7 +8,8 @@ const Sidebar = () => {
     <nav>
 <Link to="/ImageUpload">ImageUpload</Link>
        <Link to="/UserDetails">User Details</Link>
-        <Link to="/About">About</Link>
+       
+        <Link to ="/Task">Task Management</Link>
         </nav>
     </div>
   );

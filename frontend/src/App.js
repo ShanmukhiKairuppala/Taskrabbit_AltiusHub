@@ -4,6 +4,7 @@ import UserDetails from './components/UserDetails';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Image from './components/Image';
+import Task from './components/Task';
 import './App.css';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         />
      <Route path="/UserDetails" element={isAuthenticated ? <UserDetails /> : <Navigate to="/" />} />
      <Route path="/ImageUpload" element={isAuthenticated ? <Image /> : <Navigate to="/" />} />
-        
+      < Route path="/Task" element={isAuthenticated ? <Task /> : <Navigate to="/" />} /> 
 
       </Routes>
     </Router>

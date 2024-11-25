@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
+import './Image.css';
 
 const Image = () => {
    const UploadImage = () => {
@@ -20,7 +21,7 @@ const Image = () => {
         <div className="image">
             <Sidebar />
             <Header/>
-            <div className="image">
+            <div className="image-content">
         <h2>Please Upload an Image</h2>
         <p>This image will be set as Background</p>
         <input type="file" name="file" id="file" />
