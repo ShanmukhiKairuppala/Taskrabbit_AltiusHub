@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-mongoose.connect("mongodb+srv://shanmukhi:2003@cluster0.rhhba.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() => console.log("Mongodb connected"))
+mongoose.connect(process.env.MONGODB_URI).then(() => console.log("Mongodb connected"))
 .catch(()=>console.log("Error connecting to mongodb"));
 
 const User = mongoose.model('User',{    
